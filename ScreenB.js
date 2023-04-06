@@ -2,15 +2,15 @@ import React from 'react';
 import { View, Text } from 'react-native';
 import { useSelector } from 'react-redux';
 
-const ScreenB = () => {
-  const data = useSelector(state => state.data);
+const ScreenC = () => {
+  const counter = useSelector(state => state.counter);
 
   return (
     <View>
       <Text>Screen B</Text>
-      <Text>{data}</Text>
+      <Text>Counter: {counter}</Text>
     </View>
   );
 };
 
-export default ScreenB;
+export default ScreenC;

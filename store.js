@@ -1,22 +1,21 @@
 import { createStore } from 'redux';
 
 const initialState = {
-  data: null
+  counter: 0
 };
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case 'UPDATE_DATA':
-      return { ...state, data: action.payload };
+    case 'INCREMENT_COUNTER':
+      return { ...state, counter: state.counter + 1 };
     default:
       return state;
   }
 };
 
-export const updateData = (data) => {
+export const incrementCounter = () => {
   return {
-    type: 'UPDATE_DATA',
-    payload: data
+    type: 'INCREMENT_COUNTER'
   };
 };
 
