@@ -1,21 +1,23 @@
-import React from 'react';
-import { View, Text, Button } from 'react-native';
+import React, { useState } from 'react';
+import { View, Text, TextInput, Button } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
-import { incrementCounter } from './store';
+import { setAddress, setName } from './store';
 
 const ScreenA = () => {
   const dispatch = useDispatch();
-  const counter = useSelector(state => state.counter);
+  const name = useSelector(state => state.name);
+  const address = useSelector(state => state.address);
 
-  const handleIncrementCounter = () => {
-    dispatch(incrementCounter());
+  const handleSetName = (name) => {
+    dispatch(setName(name));
   };
 
   return (
     <View>
       <Text>Screen A</Text>
-      <Text>Counter: {counter}</Text>
-      <Button title="Increment counter" onPress={handleIncrementCounter} />
+      <Text>Name: {name}</Text>
+      <TextInput value={name} onChangeText={handleSetName} />
+      <Text>Address: {address}</Text>
     </View>
   );
 };

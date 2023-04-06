@@ -8,7 +8,7 @@ const ScreenC = () => {
   return (
     <View>
       <Text>Screen B</Text>
-      <Text>Counter: {counter}</Text>
+      {/* <Text>Counter: {counter}</Text> */}
     </View>
   );
 };

@@ -1,14 +1,21 @@
-import React from 'react';
-import { View, Text } from 'react-native';
-import { useSelector } from 'react-redux';
+import React, { useState } from 'react';
+import { View, Text, TextInput, Button } from 'react-native';
+import { useDispatch, useSelector } from 'react-redux';
+import { setAddress } from './store';
 
 const ScreenC = () => {
-  const counter = useSelector(state => state.counter);
+  const dispatch = useDispatch();
+  const address = useSelector(state => state.address);
+
+  const handleSetAddress = (address) => {
+    dispatch(setAddress(address));
+  };
 
   return (
     <View>
       <Text>Screen C</Text>
-      <Text>Counter: {counter+1}</Text>
+      <Text>Address: {address}</Text>
+      <TextInput value={address} onChangeText={handleSetAddress} />
     </View>
   );
 };

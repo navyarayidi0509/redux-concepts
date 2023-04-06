@@ -1,21 +1,32 @@
 import { createStore } from 'redux';
 
 const initialState = {
-  counter: 0
+  name: '',
+  address: ''
 };
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case 'INCREMENT_COUNTER':
-      return { ...state, counter: state.counter + 1 };
+    case 'SET_NAME':
+      return { ...state, name: action.payload };
+    case 'SET_ADDRESS':
+      return { ...state, address: action.payload };
     default:
       return state;
   }
 };
 
-export const incrementCounter = () => {
+export const setName = (name) => {
   return {
-    type: 'INCREMENT_COUNTER'
+    type: 'SET_NAME',
+    payload: name
+  };
+};
+
+export const setAddress = (address) => {
+  return {
+    type: 'SET_ADDRESS',
+    payload: address
   };
 };
 
