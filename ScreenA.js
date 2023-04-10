@@ -8,15 +8,15 @@ const ScreenA = () => {
   const name = useSelector(state => state.name);
   const address = useSelector(state => state.address);
 
-  const handleSetName = (name) => {
-    dispatch(setName(name));
-  };
+  // const handleSetName = (name) => {
+  //   dispatch(setName(name));
+  // };
 
   return (
     <View>
       <Text>Screen A</Text>
       <Text>Name: {name}</Text>
-      <TextInput value={name} onChangeText={handleSetName} />
+      {/* <TextInput value={name} onChangeText={handleSetName} /> */}
       <Text>Address: {address}</Text>
     </View>
   );

@@ -1,16 +1,23 @@
 import React from 'react';
-import { View, Text } from 'react-native';
-import { useSelector } from 'react-redux';
+import { View, Text, TextInput,Button} from 'react-native';
+import { useSelector,useDispatch } from 'react-redux';
+import { setName } from './store';
 
-const ScreenC = () => {
-  const counter = useSelector(state => state.counter);
+const ScreenB = () => {
+  const dispatch = useDispatch();
+  const name = useSelector(state => state.name);
+
+  const handleSetName = (name) => {
+    dispatch(setName(name));
+  };
 
   return (
     <View>
       <Text>Screen B</Text>
-      {/* <Text>Counter: {counter}</Text> */}
+      <Text>name: {name}</Text> 
+      <TextInput value={name} onChangeText={handleSetName} />
     </View>
   );
 };
 
-export default ScreenC;
+export default ScreenB;

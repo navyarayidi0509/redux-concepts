@@ -8,7 +8,7 @@ import ScreenC from './ScreenC';
 const App = () => {
   return (
     <Provider store={store}>
-      <ScreenA initialName="navya" initialAddress="123 "/>
+      <ScreenA />
       <ScreenB />
       <ScreenC />
     </Provider>
